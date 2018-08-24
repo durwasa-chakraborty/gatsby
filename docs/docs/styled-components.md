@@ -6,6 +6,8 @@ In this guide, we'll walk through setting up a site with the CSS-in-JS library [
 
 Styled Components lets you use actual CSS syntax inside your components. Styled Components is a variant on "CSS-in-JS"—which solves many of the problems with traditional CSS.
 
+However, styles are not extracted and inlined in the generated html files for files that are not included in server rendering. Therefore, use of CSS-in-JS inside these files (such as `gatsby-browser.js`) doesn't work. In such a case use of basic CSS will suffice. 
+
 One of the most important problems they solve is selector name collisions. With traditional CSS, you have to be careful not to overwrite CSS selectors used elsewhere in a site because all CSS selectors live in the same global namespace. This unfortunate restriction can lead to elaborate (and often confusing) selector naming schemes.
 
 With CSS-in-JS, you avoid all that as CSS selectors are scoped automatically to their component. Styles are tightly coupled with their components. This makes it much easier to know how to edit a component's CSS as there's never any confusion about how and where CSS is being used.
